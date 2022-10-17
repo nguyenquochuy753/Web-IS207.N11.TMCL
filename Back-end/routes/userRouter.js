@@ -24,26 +24,6 @@ app.get('/list',async(req,res)=>{
     }
 })
 
-//edit data
-app.patch('/user/:id',async(req,res)=>{
-    try {
-        const user = await userModel.findByIdAndUpdate(req.params.id,req.body);
-        await userModel.save();
-        res.send(user);
-    } catch (error) {
-        res.status(500).send(error);
-    }
-})
 
-//delete data
-app.delete('/user/:id', async (req, res) => {
-    try {
-        const user = await userModel.findByIdAndDelete(req.params.id,req.body);
-        if(!user) res.status(404).send("No item found");
-        res.status(200).send();
-    } catch (error) {
-        res.status(500).send(error);
-    }
-})
 
 module.exports=app;
