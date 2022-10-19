@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "http://localhost:3000/list",
+      url: "https://testapi1111222.herokuapp.com/list",
       data: null
     })
       .then(res => {
